@@ -1,6 +1,9 @@
 (function () {
   const { products: P, banners: B } = window.CATALOG;
   const USD_RATE = 1500; // 1 USD = 1500 RWF (change here to update conversions)
+  const MARKUP = 2000;   // RWF added to every product price (change here to adjust)
+  P.forEach(p => { p.p += MARKUP; if (p.o) p.o += MARKUP; });
+  B.forEach(b => { if (b.pp != null) b.pp += MARKUP; });
   const PER_PAGE = 24;
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
