@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Techies: Electronic Components One-stop shop | STEM and IoT, Raspberry Pi and Sensors in Rwanda</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%231a73c9'/%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='white' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="tb-left">
+      <span>📍 <span data-i18n="location">Kigali, Rwanda</span></span>
+      <span>📞 +250 7XX XXX XXX</span>
+      <span class="hide-sm">🕗 <b data-i18n="hours">WORKING HOURS</b> 8H – 19H30 · <span data-i18n="closedSun">Closed Sun</span></span>
+    </div>
+    <div class="tb-right">
+      <div class="switcher" id="switcher">
+        <button class="sw-btn" id="swBtn" aria-haspopup="true">
+          <span>文A</span> <b id="swLang">EN</b> <span class="sep">|</span> <span id="swFlag">FRw</span> <b id="swCur">RWF</b> ▾
+        </button>
+        <div class="sw-menu" id="swMenu">
+          <div class="sw-title" data-i18n="language">Language</div>
+          <button data-lang="en">🇬🇧 English</button>
+          <button data-lang="rw">🇷🇼 Ikinyarwanda</button>
+          <button data-lang="fr">🇫🇷 Français</button>
+          <div class="sw-title" data-i18n="currency">Currency</div>
+          <button data-cur="RWF">FRw — Rwandan Franc (RWF)</button>
+          <button data-cur="USD">$ — US Dollar (USD)</button>
+        </div>
+      </div>
+      <a href="#/about" data-i18n="about">About</a>
+      <a href="#/contact" data-i18n="contact">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="wrap header-in">
+    <a href="#/" class="logo">
+      <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="none" stroke="#1a73c9" stroke-width="4" stroke-dasharray="52 17" />
+        <circle cx="24" cy="24" r="12" fill="#1a73c9"/>
+        <circle cx="24" cy="24" r="5" fill="#fff"/>
+        <g fill="#1a73c9"><rect x="22" y="8" width="4" height="6" rx="1"/><rect x="22" y="34" width="4" height="6" rx="1"/><rect x="8" y="22" width="6" height="4" rx="1"/><rect x="34" y="22" width="6" height="4" rx="1"/></g>
+      </svg>
+      <span>Techies</span>
+    </a>
+    <div class="acct">
+      <button class="btn-ghost" data-modal="login">🔑 <span data-i18n="login">Login</span></button>
+      <button class="btn-blue" data-modal="register">👤 <span data-i18n="register">Register</span></button>
+    </div>
+    <button class="cart-btn" id="cartBtn">🛒 <span><small data-i18n="cart">Cart</small><b><span id="cartCount">0</span> <span data-i18n="item">item</span></b></span></button>
+    <form class="search" id="searchForm">
+      <select id="searchCat"><option value="" data-i18n="all">All</option></select>
+      <input id="searchInput" type="search" autocomplete="off">
+      <button type="submit">🔍<br><span data-i18n="search">Search</span></button>
+      <div class="suggest" id="suggest"></div>
+    </form>
+  </div>
+  <nav class="subnav">
+    <div class="wrap subnav-in">
+      <a href="#/shop" class="active">🛒 <span data-i18n="shop">Shop</span></a>
+      <a href="#/deals">🏷️ <span data-i18n="hotDeals">Hot Deals</span></a>
+      <a href="#/preorder">🔔 <span data-i18n="preorder">Pre-order</span></a>
+      <a href="#/contact">💬 <span data-i18n="messages">Messages</span></a>
+      <a href="#/categories">📂 <span data-i18n="categories">Categories</span></a>
+    </div>
+  </nav>
+</header>
+
+<main id="app" class="wrap"></main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>
+      <div class="logo light"><span>Techies</span></div>
+      <p data-i18n="tagline">Take technology in your hands</p>
+      <p>📍 <span data-i18n="location">Kigali, Rwanda</span><br>📞 +250 7XX XXX XXX<br>✉️ sales@techies.rw</p>
+    </div>
+    <div>
+      <h4 data-i18n="shop">Shop</h4>
+      <a href="#/shop" data-i18n="allProducts">All products</a>
+      <a href="#/deals" data-i18n="hotDeals">Hot Deals</a>
+      <a href="#/preorder" data-i18n="preorder">Pre-order</a>
+      <a href="#/categories" data-i18n="categories">Categories</a>
+    </div>
+    <div>
+      <h4 data-i18n="company">Company</h4>
+      <a href="#/about" data-i18n="about">About</a>
+      <a href="#/contact" data-i18n="contact">Contact</a>
+    </div>
+    <div>
+      <h4 data-i18n="payments">Secure Payments</h4>
+      <p>MTN MoMo · Airtel Money · VISA · <span data-i18n="cashPos">Cash on POS</span></p>
+    </div>
+  </div>
+  <div class="copy">© <span id="year"></span> Techies. <span data-i18n="rights">All rights reserved.</span></div>
+</footer>
+
+<!-- Floating buttons -->
+<a class="fab wa" href="#/contact" title="WhatsApp">💬</a>
+
+<!-- Cart drawer -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-h"><h3 data-i18n="yourCart">Your Cart</h3><button id="closeDrawer">✕</button></div>
+  <div class="drawer-b" id="drawerBody"></div>
+  <div class="drawer-f">
+    <div class="tot"><span data-i18n="subtotal">Subtotal</span><b id="cartTotal"></b></div>
+    <button class="btn-orange full" id="checkoutBtn" data-i18n="checkout">Checkout</button>
+  </div>
+</aside>
+
+<!-- Modal -->
+<div class="modal" id="modal"><div class="modal-c" id="modalC"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
