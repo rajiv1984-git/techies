@@ -225,6 +225,11 @@ img{max-width:100%;display:block}
 }
 @media (max-width:560px){
   .acct{display:none}
+  .search{min-width:0}
+  .search select{max-width:80px}
+  .newsletter{padding:22px}
+  .newsletter form{flex-direction:column;max-width:100%;min-width:0}
+  .tb-left span:nth-child(2){display:none}
   .hero h1{font-size:28px}
   .grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .card .acts{grid-template-columns:1fr}
