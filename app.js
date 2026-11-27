@@ -92,7 +92,6 @@
         <div class="dots">${heroes.map((_, i) => `<i data-dot="${i}"></i>`).join("")}</div>
       </div>
       <div class="side-banners">
-        <a class="sb a" href="#/deals"><small>🔥 ${t("hotDealsTag")}</small><h3>${t("saveOn")}</h3><span>${t("browseDeals")}</span></a>
         <a class="sb b" href="#/shop?sort=new"><small>✨ ${t("newArrivals")}</small><h3>${t("newArrivalsT")}</h3><span>${t("seeNew")}</span></a>
       </div>
     </div>
@@ -108,11 +107,10 @@
 
     <section class="section">${secHead(t("recT"), t("recS"), "#/shop", t("viewAll"))}${grid(rec)}</section>
 
-    <section class="section">${secHead(t("catT"), t("catS"), "#/categories", t("allCats"))}
+    <section class="section">${secHead(t("catT"), t("catS"))}
       <div class="cats">${CATS.slice().sort((a, b) => b.cnt - a.cnt).slice(0, 20).map(catCard).join("")}</div></section>
 
     <section class="section"><div class="promo3">
-      <a class="promo p1" href="#/deals"><small>${t("deals")}</small><h3>${t("dealsT")}</h3><span>${t("viewDeals")}</span></a>
       <a class="promo p2" href="#/shop?cat=artificial-intelligence"><small>${t("future")}</small><h3>${t("futureT")}</h3><span>${t("shopAI")}</span></a>
       <a class="promo p3" href="#/shop?cat=robotic-electromechanical"><small>${t("robo")}</small><h3>${t("roboT")}</h3><span>${t("shopRobo")}</span></a>
     </div></section>
