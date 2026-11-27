@@ -1,9 +1,10 @@
 (function () {
   const { products: P, banners: B } = window.CATALOG;
   const USD_RATE = 1500; // 1 USD = 1500 RWF (change here to update conversions)
-  const MARKUP = 2000;   // RWF added to every product price (change here to adjust)
-  P.forEach(p => { p.p += MARKUP; if (p.o) p.o += MARKUP; });
-  B.forEach(b => { if (b.pp != null) b.pp += MARKUP; });
+  // Price markup (RWF): products under 5,000 get +500, products 5,000 and up get +2,000
+  const markup = price => (price < 5000 ? 500 : 2000);
+  P.forEach(p => { const m = markup(p.p); p.p += m; if (p.o) p.o += m; });
+  B.forEach(b => { if (b.pp != null) b.pp += markup(b.pp); });
   const PER_PAGE = 24;
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
